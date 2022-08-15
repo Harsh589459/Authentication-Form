@@ -77,7 +77,36 @@
       <!---------------------------SignUp Form-------------------------------->
       <form class="row g-3 registration-form" id="signup-form">
         <h1 class="col-md-12 diplay-4 sign-up-title">Sign Up</h1>
-
+        <div
+          class="alert alert-success alert-dismissible fade show col-md-8 signup-alert"
+          role="alert"
+          id="signup-alert-success"
+        >
+          Signed up succesfully!
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show col-md-8 signup-alert"
+          role="alert"
+          id="signup-alert-failure"
+        >
+          Sign up unsuccessfull!
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
         <div class="col-md-6">
           <label for="signup-first-name" class="form-label">First name</label>
           <input
@@ -190,6 +219,37 @@
       <form class="login-form" id="login-form">
         <h1 class="col-md-12 diplay-4 login-title">Login</h1>
 
+        <div
+          class="alert alert-success alert-dismissible fade show login-alert"
+          role="alert"
+          id="login-alert-success"
+        >
+          Access Granted!
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show login-alert"
+          role="alert"
+          id="login-alert-failure"
+        >
+          Access Denied!
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
         <div class="mb-3">
           <label for="login-email" class="form-label">Email address</label>
           <input
@@ -213,7 +273,7 @@
           </button>
         </div>
       </form>
-      <!-------------------------Login Form-------------------------------------->
+      <!-------------------------Login Form Ends-------------------------------------->
       <img
         src="https://i.pinimg.com/736x/1c/e3/dc/1ce3dc9938260cd96d5f8feb73aa3c2f.jpg"
         width="100%"
