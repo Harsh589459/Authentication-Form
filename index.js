@@ -21,8 +21,30 @@ let encryptionRule = {
 '@':'-', '~':'_'
 
 }
+//encrypt
+const encrypt =(inputPassword) =>{
+    let encryptedPassword=''
+    for(char of inputPassword){
+        
+        encryptedPassword=encryptedPassword + encryptionRule[char];
+
+    }
+    return encryptedPassword;
+
+}
 
 //decrypt
+const decrypt =(encryptedPassword) =>{
+    let actualPassword=''
+    let keys = Object.keys(encryptionRule)
+    let values=Object.values(encryptionRule)
+    for(char of encryptedPassword){
+        let requriedIndex = values.findIndex(value => value === char)
+        actualPassword = actualPassword + keys[requriedIndex]
+    }
+    return actualPassword
+}
+console.log(decrypt('Fngln'))
 
 
 const DB_USERS= []
@@ -62,7 +84,7 @@ const signup = ()=>{
         lastName,
         phone,
         email,
-        password,
+        password:encrypt(password),
     }
 
     DB_USERS.push(userDetails)// It is storing the database value of UserDetails
@@ -83,7 +105,7 @@ const login = () =>{
 
 
     let currentUser = DB_USERS.find(user => 
-        user.email===enteredEmail  && user.password===enteredpassword )
+        user.email===enteredEmail  && decrypt(user.password)===enteredpassword )
 
    if(currentUser) {
         loginSuccessAlert.style.display='block'
@@ -96,6 +118,9 @@ else{
    }
    resetLoginFields()
 }
+
+
+
 
 /* 
         find() -> Return a condition to find the element ;If value exists , returns the value; else return undefined
